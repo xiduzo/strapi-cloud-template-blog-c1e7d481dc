@@ -13,22 +13,50 @@
   "pluginOptions": {},
   "attributes": {
     "name": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "avatar": {
       "type": "media",
       "multiple": false,
-      "required": false,
-      "allowedTypes": ["images", "files", "videos"]
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ]
     },
-    "email": {
-      "type": "string"
+    "linkedin": {
+      "type": "string",
+      "required": true
     },
     "articles": {
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::article.article",
       "mappedBy": "author"
+    },
+    "introduction": {
+      "type": "string",
+      "maxLength": 150,
+      "required": true
+    },
+    "function": {
+      "type": "string",
+      "required": true
+    },
+    "detail": {
+      "type": "richtext",
+      "required": true
+    },
+    "email": {
+      "type": "email",
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "name",
+      "required": true
     }
   }
 }
