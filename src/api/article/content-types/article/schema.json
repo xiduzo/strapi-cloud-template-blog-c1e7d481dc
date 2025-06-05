@@ -18,7 +18,7 @@
     },
     "description": {
       "type": "text",
-      "maxLength": 80,
+      "maxLength": 200,
       "required": true
     },
     "slug": {
