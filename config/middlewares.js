@@ -15,24 +15,23 @@ module.exports = [
       contentSecurityPolicy: {
         useDefaults: true,
         directives: {
+          "default-src": ["'self'"],
           "connect-src": ["'self'", "https:"],
           "img-src": [
             "'self'",
             "data:",
             "blob:",
-            "market-assets.strapi.io",
-            "res.cloudinary.com",
+            "mwonderwijs.xiduzo.com",
           ],
           "media-src": [
             "'self'",
             "data:",
             "blob:",
-            "market-assets.strapi.io",
-            "res.cloudinary.com",
+            "mwonderwijs.xiduzo.com",
           ],
           upgradeInsecureRequests: null,
         },
       },
     },
-  },
+  }
 ];

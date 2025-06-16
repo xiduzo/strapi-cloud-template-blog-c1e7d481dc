@@ -8,6 +8,7 @@ WORKDIR /opt/
 COPY package.json package-lock.json ./
 RUN npm install -g node-gyp
 RUN npm config set fetch-retry-maxtimeout 600000 -g && npm install --only=production
+RUN npm install pg --save
 ENV PATH=/opt/node_modules/.bin:$PATH
 WORKDIR /opt/app
 COPY . .
@@ -24,7 +25,7 @@ WORKDIR /opt/app
 COPY --from=build /opt/app ./
 ENV PATH=/opt/node_modules/.bin:$PATH
 
-RUN chown -R node:node /opt/app
-USER node
+# RUN chown -R node:node /opt/app
+# USER node
 EXPOSE 1337
 CMD ["npm", "run", "start"]
